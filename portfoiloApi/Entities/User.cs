@@ -15,7 +15,7 @@ namespace portfoiloApi.Entities
         public string LastName { get; set; }
         public string Email { get; set; }
         public Role Role { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public string PasswordHash { get; set; }
         public string? MobileNumber { get; set; }
 

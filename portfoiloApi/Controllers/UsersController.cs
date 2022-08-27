@@ -44,6 +44,14 @@ namespace portfoiloApi.Controllers
             _userService.Update(id, model);
             return Ok(new { message = "User updated" });
         }
+
+        [HttpPatch("{id}")]
+        public IActionResult Update(int id, UpdatePasswordRequest model)
+        {
+            _userService.UpdatePassword(id, model);
+            return Ok(new { message = "User password updated" });
+        }
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

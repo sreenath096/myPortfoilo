@@ -17,20 +17,7 @@ namespace portfoiloApi.Models.Users
         public string? Email { get; set; }
         [EnumDataType(typeof(Role))]
         public Role? Role { get; set; }
-        private string? _password;
-        [MinLength(6)]
-        public string? Password
-        {
-            get => _password;
-            set => _password = value?.ReplaceEmptyStringWithNull();
-        }
-        private string? _confirmPassword;
-        [Compare("Password")]
-        public string? ConfirmPassword
-        {
-            get => _confirmPassword;
-            set => _confirmPassword = value?.ReplaceEmptyStringWithNull();
-        }
+        
         public string? MobileNumber { get; set; }
     }
 }

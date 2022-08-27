@@ -13,9 +13,10 @@ namespace portfoiloApi.Helpers
         public AutoMapperProfile()
         {
             CreateMap<CreateRequest, User>();
+            CreateMap<UpdatePasswordRequest, User>();
             CreateMap<UpdateRequest, User>()
                 .ForAllMembers(x => x.Condition(
-                    (src, dest, prop) => 
+                    (src, dest, prop) =>
                     {
                         // ignore both nul & empty string properties
                         if (prop == null) return false;

@@ -16,6 +16,7 @@ namespace portfoiloApi.Services
         User GetById(int id);
         void Create(CreateRequest model);
         void Update(int id, UpdateRequest model);
+        void UpdatePassword(int id, UpdatePasswordRequest model);
         void Delete(int id);
     }
     public class UserService : IUserService
@@ -60,6 +61,15 @@ namespace portfoiloApi.Services
         {
             CheckEmailExists(model.Email);
 
+            var user = GetUser(id);
+
+            _mapper.Map(model, user);
+            _dataContext.Users.Update(user);
+            _dataContext.SaveChanges();
+        }
+
+        public void UpdatePassword(int id, UpdatePasswordRequest model)
+        {
             var user = GetUser(id);
 
             if (!string.IsNullOrEmpty(model.Password))
