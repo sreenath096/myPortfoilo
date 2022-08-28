@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.FeatureManagement;
+using Microsoft.FeatureManagement.Mvc;
 using portfoiloApi.Models.Users;
 using portfoiloApi.Services;
 
@@ -14,9 +16,11 @@ namespace portfoiloApi.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IFeatureManager _featureManager;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService, IFeatureManager featureManager)
         {
+            _featureManager = featureManager;
             _userService = userService;
         }
 
@@ -46,6 +50,7 @@ namespace portfoiloApi.Controllers
         }
 
         [HttpPatch("{id}")]
+        [FeatureGate("UpdatePasswordEnabled")]
         public IActionResult Update(int id, UpdatePasswordRequest model)
         {
             _userService.UpdatePassword(id, model);
