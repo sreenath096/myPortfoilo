@@ -9,15 +9,14 @@ namespace portfoiloApi.Helpers
 {
     public class DataContext : DbContext
     {
-        private readonly IConfiguration _configuration;
-        public DataContext(IConfiguration configuration)
+        public DataContext(DbContextOptions options) : base(options)
         {
-            _configuration = configuration;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase("TestDb");
+            // use when we use in memory database
+            //optionsBuilder.UseInMemoryDatabase("TestDb");
         }
 
         public DbSet<User> Users { get; set; }
