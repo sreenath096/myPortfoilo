@@ -11,9 +11,7 @@ using portfoiloApi.Services;
 
 namespace portfoiloApi.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
         private readonly IUserService _userService;
         private readonly IFeatureManager _featureManager;

@@ -44,6 +44,8 @@ builder.Services.AddAzureAppConfiguration();
 
 var app = builder.Build();
 
+app.UsePathBase(new PathString("/portfolio-app"));
+
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 {
@@ -53,6 +55,8 @@ var app = builder.Build();
 app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
+app.UseRouting();
 
 app.UseHttpsRedirection();
 
