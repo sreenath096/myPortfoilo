@@ -61,7 +61,7 @@ namespace MyPortfolio.BAL
                 user.PasswordHash = GeneratePassword(model.Password);
 
             _mapper.Map(model, user);
-            _userRepository.Update(id, user);
+            _userRepository.UpdatePassword(id, user);
         }
           
         private string GeneratePassword(string password)

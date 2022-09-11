@@ -14,10 +14,9 @@ namespace MyPortFolio.DAL
 
         public void Create(User model)
         {
-            CheckEmailExists(model.Email);          
-
+            CheckEmailExists(model.Email);
             _dataContext.Users.Add(model);
-            _dataContext.SaveChanges();
+            _dataContext.SaveChanges();                      
         }
 
         public void Delete(int id)
@@ -38,8 +37,7 @@ namespace MyPortFolio.DAL
         }
 
         public void Update(int id, User model)
-        {
-            CheckEmailExists(model.Email);            
+        {            
             _dataContext.Users.Update(model);
             _dataContext.SaveChanges();
         }
