@@ -1,15 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using portfoiloApi.Entities;
+using MyPortfolio.Models.Entities;
 
-namespace portfoiloApi.Helpers
+namespace MyPortFolio.DAL
 {
-    public class DataContext : DbContext
+    public class SqlServerDataContext : DbContext
     {
-        public DataContext(DbContextOptions options) : base(options)
+        public SqlServerDataContext(DbContextOptions options) : base(options)
         {
         }
 

@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using portfoiloApi.Helpers;
+using MyPortFolio.DAL;
 
 #nullable disable
 
-namespace portfoiloApi.Migrations
+namespace MyPortFolio.DAL.Migrations.SqlServer
 {
-    [DbContext(typeof(DataContext))]
-    [Migration("20220827153232_initialCreate")]
+    [DbContext(typeof(SqlServerDataContext))]
+    [Migration("20220911124522_initialCreate")]
     partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace portfoiloApi.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("portfoiloApi.Entities.User", b =>
+            modelBuilder.Entity("MyPortfolio.Models.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

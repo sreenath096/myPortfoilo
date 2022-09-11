@@ -1,4 +1,4 @@
-namespace portfoiloApi.Common.Enums
+﻿namespace MyPortfolio.Common.Enums
 {
     public enum Role
     {

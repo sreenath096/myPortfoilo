@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
+﻿using MyPortfolio.Common.Enums;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using portfoiloApi.Common.Enums;
-using portfoiloApi.Common.Extensions;
 
-namespace portfoiloApi.Models.Users
+namespace MyPortfolio.Models.Models.Users
 {
     public class UpdateRequest
     {
@@ -17,7 +12,7 @@ namespace portfoiloApi.Models.Users
         public string? Email { get; set; }
         [EnumDataType(typeof(Role))]
         public Role? Role { get; set; }
-        
+
         public string? MobileNumber { get; set; }
     }
 }

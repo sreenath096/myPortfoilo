@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace portfoiloApi.Migrations
+namespace MyPortFolio.DAL.Migrations.SqlServer
 {
     public partial class initialCreate : Migration
     {

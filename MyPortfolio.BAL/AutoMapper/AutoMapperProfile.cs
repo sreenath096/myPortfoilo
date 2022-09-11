@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using portfoiloApi.Entities;
-using portfoiloApi.Models.Users;
+﻿using AutoMapper;
+using MyPortfolio.Models.Entities;
+using MyPortfolio.Models.Models.Users;
 
-namespace portfoiloApi.Helpers
+namespace MyPortfolio.BAL.AutoMapper
 {
     public class AutoMapperProfile : Profile
     {

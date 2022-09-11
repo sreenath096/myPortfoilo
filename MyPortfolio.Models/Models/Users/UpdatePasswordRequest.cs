@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace portfoiloApi.Models.Users
+namespace MyPortfolio.Models.Models.Users
 {
     public class UpdatePasswordRequest
     {
@@ -14,6 +10,5 @@ namespace portfoiloApi.Models.Users
         [Required]
         [Compare("Password")]
         public string? ConfirmPassword { get; set; }
-
     }
 }

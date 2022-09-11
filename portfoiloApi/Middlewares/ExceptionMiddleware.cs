@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using MyPortfolio.Common.Exception;
 using System.Net;
 using System.Text.Json;
-using System.Threading.Tasks;
-using portfoiloApi.Helpers;
 
 namespace portfoiloApi.Middlewares
 {
@@ -31,7 +27,7 @@ namespace portfoiloApi.Middlewares
 
                 switch (ex)
                 {
-                    case AppException e:
+                    case PortfolioApiException e:
                         response.StatusCode = (int)HttpStatusCode.BadRequest;
                         break;
                     case KeyNotFoundException e:

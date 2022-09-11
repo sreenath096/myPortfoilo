@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using portfoiloApi.Common.Enums;
+﻿using MyPortfolio.Common.Enums;
 
-namespace portfoiloApi.Entities
+namespace MyPortfolio.Models.Entities
 {
     public class User
     {
@@ -18,6 +13,5 @@ namespace portfoiloApi.Entities
         //[JsonIgnore]
         public string PasswordHash { get; set; }
         public string? MobileNumber { get; set; }
-
     }
 }

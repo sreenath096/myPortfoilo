@@ -1,10 +1,10 @@
-using System.Text.Json.Serialization;
-using Azure.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.FeatureManagement;
-using portfoiloApi.Helpers;
+using MyPortfolio.BAL;
+using MyPortfolio.BAL.Contracts;
+using MyPortFolio.DAL;
 using portfoiloApi.Middlewares;
-using portfoiloApi.Services;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,7 +31,7 @@ builder.Services.AddControllers().AddJsonOptions(x =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<DataContext>(options =>
+builder.Services.AddDbContext<SqlServerDataContext>(options =>
 {
     //options.UseInMemoryDatabase("Default");
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
@@ -39,6 +39,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddCors();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddFeatureManagement();
 builder.Services.AddAzureAppConfiguration();
 

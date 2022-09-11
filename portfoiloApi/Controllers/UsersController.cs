@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.FeatureManagement;
 using Microsoft.FeatureManagement.Mvc;
-using portfoiloApi.Models.Users;
-using portfoiloApi.Services;
+using MyPortfolio.BAL;
+using MyPortfolio.Models.Models.Users;
 
 namespace portfoiloApi.Controllers
 {
