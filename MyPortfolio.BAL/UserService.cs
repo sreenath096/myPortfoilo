@@ -1,7 +1,7 @@
 using AutoMapper;
 using MyPortfolio.BAL.Contracts;
 using MyPortfolio.Models.Entities;
-using MyPortfolio.Models.Models.Users;
+using MyPortfolio.Models.Request.Users;
 
 namespace MyPortfolio.BAL
 {

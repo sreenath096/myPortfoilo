@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MyPortfolio.Models.Entities;
-using MyPortfolio.Models.Models.Users;
+using MyPortfolio.Models.Request.Users;
 
 namespace MyPortfolio.BAL.AutoMapper
 {

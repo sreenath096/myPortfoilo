@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Design;
 
 namespace MyPortFolio.DAL
 {
-    public class DataContextContextFactory : IDesignTimeDbContextFactory<SqlServerDataContext>
+    public class DataContextFactory : IDesignTimeDbContextFactory<SqlServerDataContext>
     {
         public SqlServerDataContext CreateDbContext(string[] args)
         {

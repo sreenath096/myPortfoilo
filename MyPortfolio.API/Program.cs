@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.FeatureManagement;
 using MyPortfolio.API.Middlewares;
-using MyPortfolio.BAL;
 using MyPortfolio.BAL.Contracts;
+using MyPortfolio.BAL.Factory;
 using MyPortFolio.DAL;
 using System.Text.Json.Serialization;
 
@@ -37,7 +37,7 @@ builder.Services.AddDbContext<SqlServerDataContext>(options =>
 });
 builder.Services.AddCors();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IServiceFactory, ServiceFactory>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddFeatureManagement();
 builder.Services.AddAzureAppConfiguration();

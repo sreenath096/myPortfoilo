@@ -1,7 +1,7 @@
 ﻿using MyPortfolio.Common.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace MyPortfolio.Models.Models.Users
+namespace MyPortfolio.Models.Request.Users
 {
     public class CreateRequest
     {

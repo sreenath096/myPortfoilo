@@ -1,5 +1,4 @@
 ﻿using MyPortfolio.Models.Entities;
-using MyPortfolio.Models.Models.Users;
 
 namespace MyPortfolio.BAL.Contracts
 {
